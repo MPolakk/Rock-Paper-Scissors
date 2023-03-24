@@ -1,0 +1,17 @@
+.rules-bar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   .rules {
+      background-color: transparent;
+      border: 2px solid hsl(217, 16%, 45%);
+      width: 130px;
+      height: 45px;
+      border-radius: 10px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      font-size: 1.8em;
+   }
+}

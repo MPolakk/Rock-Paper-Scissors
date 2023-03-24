@@ -1,0 +1,129 @@
+.game-board {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 70vh; 
+   padding: 60px 0;
+   div {
+      position: relative;
+      display: grid;
+      grid-template-areas: 
+      "PAPER SCISSORS"
+      "ROCK ROCK";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+      
+      
+   button {
+      aspect-ratio: 1 / 1;
+      width: 100px;
+      border-radius: 50%;
+      padding: 20px;
+      margin: 30px;
+   }
+
+   button:active{
+      top: 2px;
+   }
+   button:active::after{
+      box-shadow: 0 3px 1px -1px;
+   }
+   .rock {  
+      grid-area: ROCK;
+      position: relative;
+      // top: -2px;
+      border: 0 solid transparent;
+      border-radius: 50%;
+      background-clip: padding-box;
+      background-image: url('../images/icon-rock.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0 0px 1px 0px black;
+
+   }
+   .rock::after {
+      position: absolute;
+      top: -15px; bottom: -15px;
+      left: -15px; right: -15px;
+      background: linear-gradient(hsl(349, 71%, 52%),hsl(349, 70%, 56%));
+      content: '';
+      z-index: -1;
+      border-radius: 50%;
+      box-shadow: 0 8px 1px -1px hsla(349, 71%, 52%, 0.5);
+   }
+   .paper {
+      // margin-right: 15px;
+      grid-area: PAPER;
+      position: relative;
+      border: 0 solid transparent;
+      border-radius: 50%;
+      
+      background-clip: padding-box;
+      background-image: url('../images/icon-paper.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      
+      
+   }
+   .paper::after {
+      position: absolute;
+      top: -15px; bottom: -15px;
+      left: -15px; right: -15px;
+      background: linear-gradient(hsl(230, 89%, 62%),hsl(230, 89%, 65%));
+      content: '';
+      z-index: -1;
+      border-radius: 50%;
+      box-shadow: 0 8px 1px -1px hsla(230, 89%, 62%, 0.5);
+   }
+   .scissors {
+      
+      grid-area: SCISSORS;
+      position: relative;
+      border: 0 solid transparent;
+      border-radius: 50%;
+      background-clip: padding-box;
+      background-image: url('../images/icon-scissors.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+   }
+   .scissors::after {
+      position: absolute;
+      top: -15px; bottom: -15px;
+      left: -15px; right: -15px;
+      background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+      content: '';
+      z-index: -1;
+      border-radius: 50%;
+      box-shadow: 0 8px 1px -1px hsla(39, 89%, 49%, 0.5);
+   }
+   
+
+   .line {
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 150px;
+      background-color:rgba(0, 0, 0, 0.216);
+      z-index: -2;
+   }
+   .first-line {
+      transform: rotate(25deg);
+      right: 115px;
+      top: 100px;
+   }
+   .sec-line {
+      transform: rotate(-25deg);
+      left: 115px;
+      top: 100px;
+   }
+   .third-line {
+      transform: rotate(90deg);
+      left: 150px;
+      top: 10px;
+   }
+   }
+
+
+}
