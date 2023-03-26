@@ -21,6 +21,7 @@
       height: 150px;
       background-color:rgba(0, 0, 0, 0.216);
       z-index: -2;
+      pointer-events: none;
    }
    .first-line {
       transform: rotate(25deg);

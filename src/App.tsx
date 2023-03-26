@@ -4,16 +4,17 @@ import PickingBoard from './components/PickingBoard';
 import Rules from './components/Rules';
 import GameBoard from './components/GameBoard';
 import PlayAgain from './components/PlayAgain';
-
+import PopUpRules from './components/PopUpRules';
 function App() {
 
   return (
     <div className="App">
       <ScoreBoard />
-      {/* <PickingBoard /> */}
-      <GameBoard />
+      <PickingBoard />
+      {/* <GameBoard /> */}
       <PlayAgain />
       <Rules />
+      {/* <PopUpRules /> */}
     </div>
   );
 }

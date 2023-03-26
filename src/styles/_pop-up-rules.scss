@@ -1,0 +1,59 @@
+.popup-rules {
+   position: fixed;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   width: 100%;
+   background-color: white;
+  
+   div {
+      display: flex;
+      justify-content: center;
+      height: 80%;
+      width: 100%;
+      margin: 70px 30px 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../images/image-rules.svg');
+      span {
+         margin: 50px 0;
+         display: block;
+         font-size: 3.0em;
+         text-transform: uppercase;
+         font-weight: 700;
+         color: rgb(81, 81, 81)
+         
+      }
+
+
+   }
+   .popup-exit {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      bottom: 50px;
+      background-color: transparent;
+      border: none;
+   }
+   .popup-exit::before {
+      position: absolute;
+      content: '';
+      height: 30px;
+      border: 1px solid rgb(180, 180, 180);
+      transform: rotate(-45deg);
+      border-radius: 1px;
+   }
+   .popup-exit::after {
+      position: absolute;
+      content: '';
+      height: 30px;
+      border: 1px solid rgb(180, 180, 180);
+      border-radius: 1px;
+      transform: rotate(45deg);
+      
+   }
+   
+}

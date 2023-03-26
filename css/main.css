@@ -83,7 +83,7 @@ input {
   width: 300px;
   height: 100%;
   margin: 10px;
-  padding: 20px 0 150px;
+  padding: 0 0 250px;
   z-index: 1;
 }
 
@@ -289,6 +289,7 @@ input {
   height: 150px;
   background-color: rgba(0, 0, 0, 0.216);
   z-index: -2;
+  pointer-events: none;
 }
 
 .picking-board div .first-line {
@@ -391,6 +392,78 @@ input {
   opacity: 0.021;
   background-color: #fff;
   z-index: -3;
+}
+
+.popup-rules {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.popup-rules div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80%;
+  width: 100%;
+  margin: 70px 30px 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/image-rules.svg");
+}
+
+.popup-rules div span {
+  margin: 50px 0;
+  display: block;
+  font-size: 3.0em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #515151;
+}
+
+.popup-rules .popup-exit {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  bottom: 50px;
+  background-color: transparent;
+  border: none;
+}
+
+.popup-rules .popup-exit::before {
+  position: absolute;
+  content: '';
+  height: 30px;
+  border: 1px solid #b4b4b4;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-radius: 1px;
+}
+
+.popup-rules .popup-exit::after {
+  position: absolute;
+  content: '';
+  height: 30px;
+  border: 1px solid #b4b4b4;
+  border-radius: 1px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .play-again {
