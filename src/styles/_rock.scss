@@ -1,0 +1,23 @@
+.rock {  
+   grid-area: ROCK;
+   position: relative;
+   // top: -2px;
+   border: 0 solid transparent;
+   border-radius: 50%;
+   background-clip: padding-box;
+   background-image: url('../images/icon-rock.svg');
+   background-repeat: no-repeat;
+   background-position: center;
+   box-shadow: 0 0px 1px 0px black;
+
+}
+.rock::after {
+   position: absolute;
+   top: -15px; bottom: -15px;
+   left: -15px; right: -15px;
+   background: linear-gradient(hsl(349, 71%, 52%),hsl(349, 70%, 56%));
+   content: '';
+   z-index: -1;
+   border-radius: 50%;
+   box-shadow: 0 8px 1px -1px hsla(349, 71%, 52%, 0.5);
+}

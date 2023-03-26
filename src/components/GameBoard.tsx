@@ -1,13 +1,17 @@
+import Rock from "./Rock";
+import Paper from "./Paper";
+import BlankSpace from "./BlankPlace";
 const GameBoard = () => {
    return (
       <div className="game-board">
          <div>
-            <button className="paper"></button>
-            <button className="scissors"></button>
-            <button className="rock"></button>
-            <span className="line first-line"></span>
-            <span className="line sec-line"></span>
-            <span className="line third-line"></span>
+            <Rock />
+            <BlankSpace />
+            {/* <Paper /> */}
+            <span>you picked</span>
+            <span>the house picked</span>
+
+
          </div>
       </div>
    );

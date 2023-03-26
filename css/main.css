@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-size: 10px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image: radial-gradient(#1f3756, #141539);
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 300px;
+  height: 100%;
+  margin: 10px;
+  padding: 20px 0 150px;
+  z-index: 1;
+}
+
+.App div:nth-child(2) div .symbol {
+  aspect-ratio: 1 / 1;
+  width: 100px;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 30px;
+}
+
+.App div:nth-child(2) div .symbol-active:active {
+  top: 2px;
+}
+
+.App div:nth-child(2) div .symbol-active:active::after {
+  -webkit-box-shadow: 0 3px 1px -1px;
+          box-shadow: 0 3px 1px -1px;
+}
+
+.score-board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  border: 2px solid #606e85;
+  border-radius: 5px;
+  padding: 10px 10px 10px 15px;
+}
+
+.score-board .score-board_logo {
+  width: 30%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.score-board .score-board_score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 60px;
+  height: 100%;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.score-board .score-board_score span {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2a46c0;
+}
+
+.score-board .score-board_score .score-number {
+  font-size: 3.0em;
+  letter-spacing: 0px;
+  color: #606e85;
+}
+
+.scissors {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: SCISSORS;
+  position: relative;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  background-clip: padding-box;
+  background-image: url("../images/icon-scissors.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scissors::after {
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  left: -15px;
+  right: -15px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
+  background: linear-gradient(#ec9e0e, #eca922);
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 8px 1px -1px rgba(236, 158, 14, 0.5);
+          box-shadow: 0 8px 1px -1px rgba(236, 158, 14, 0.5);
+}
+
+.rock {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: ROCK;
+  position: relative;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  background-clip: padding-box;
+  background-image: url("../images/icon-rock.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: 0 0px 1px 0px black;
+          box-shadow: 0 0px 1px 0px black;
+}
+
+.rock::after {
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  left: -15px;
+  right: -15px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
+  background: linear-gradient(#dc2e4e, #dd405d);
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 8px 1px -1px rgba(220, 46, 78, 0.5);
+          box-shadow: 0 8px 1px -1px rgba(220, 46, 78, 0.5);
+}
+
+.paper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: PAPER;
+  position: relative;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  background-clip: padding-box;
+  background-image: url("../images/icon-paper.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.paper::after {
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  left: -15px;
+  right: -15px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
+  background: linear-gradient(#4865f4, #5671f5);
+  content: '';
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 8px 1px -1px rgba(72, 101, 244, 0.5);
+          box-shadow: 0 8px 1px -1px rgba(72, 101, 244, 0.5);
+}
+
+.blank-space {
+  position: relative;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.picking-board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.picking-board div {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "PAPER SCISSORS" "ROCK ROCK";
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.picking-board div .line {
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.216);
+  z-index: -2;
+}
+
+.picking-board div .first-line {
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+  right: 115px;
+  top: 100px;
+}
+
+.picking-board div .sec-line {
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  left: 115px;
+  top: 100px;
+}
+
+.picking-board div .third-line {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: 150px;
+  top: 10px;
+}
+
+.game-board div {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "pick1 pick2" "span1 span2";
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.game-board div .symbol:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: pick1;
+}
+
+.game-board div .symbol:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: pick2;
+}
+
+.game-board div span {
+  color: white;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin: 20px auto;
+}
+
+.game-board div span:nth-child(1) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: span1;
+}
+
+.game-board div span:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: span2;
+}
+
+.rules-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 70px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+}
+
+.rules-bar .rules {
+  background-color: transparent;
+  border: 2px solid #606e85;
+  width: 130px;
+  height: 45px;
+  border-radius: 10px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1.8em;
+}
+/*# sourceMappingURL=main.css.map */

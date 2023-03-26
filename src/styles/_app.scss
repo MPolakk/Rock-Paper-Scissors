@@ -1,6 +1,10 @@
+
+
+
 #root {
    display: flex;
    justify-content: center;
+   align-items: center;
    height: 100vh;
    overflow: hidden;
    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
@@ -8,11 +12,31 @@
 }
 .App{
    display: flex;
+   position:relative;
    flex-wrap:wrap;
    justify-content: center;
+   align-items: flex-start;
    width:300px;
    height: 100%;
    margin: 10px;
-   padding: 20px 0 50px;
+   padding: 20px 0 150px;
    z-index: 1;
+   div:nth-child(2){
+   div{
+      .symbol {
+         aspect-ratio: 1 / 1;
+         width: 100px;
+         border-radius: 50%;
+         padding: 20px;
+         margin: 30px;
+      }
+   
+      .symbol-active:active{
+         top: 2px;
+      }
+      .symbol-active:active::after{
+         box-shadow: 0 3px 1px -1px;
+      }
+   }
+}
 }

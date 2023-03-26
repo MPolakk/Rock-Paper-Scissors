@@ -1,0 +1,43 @@
+.picking-board {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   div {
+      position: relative;
+      display: grid;
+      grid-template-areas: 
+      "PAPER SCISSORS"
+      "ROCK ROCK";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+   
+   
+   .line {
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 150px;
+      background-color:rgba(0, 0, 0, 0.216);
+      z-index: -2;
+   }
+   .first-line {
+      transform: rotate(25deg);
+      right: 115px;
+      top: 100px;
+   }
+   .sec-line {
+      transform: rotate(-25deg);
+      left: 115px;
+      top: 100px;
+   }
+   .third-line {
+      transform: rotate(90deg);
+      left: 150px;
+      top: 10px;
+   }
+   }
+
+
+}

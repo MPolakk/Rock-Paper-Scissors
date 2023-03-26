@@ -1,7 +1,10 @@
 .rules-bar {
    display: flex;
+   position: absolute;
+   bottom: 70px;
    justify-content: center;
    align-items: center;
+   height: 45px;
    .rules {
       background-color: transparent;
       border: 2px solid hsl(217, 16%, 45%);
