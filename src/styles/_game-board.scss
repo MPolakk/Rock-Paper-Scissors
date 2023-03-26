@@ -1,5 +1,6 @@
 .game-board {
-   div {
+   .game-board__container {
+      position: relative;
       display: grid;
       grid-template-areas: 
       "pick1 pick2"
@@ -7,13 +8,14 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       align-items: start;
-     
+      
+      
       .symbol:nth-child(1){
          grid-area: pick1;
       }
       .symbol:nth-child(2) {
          grid-area: pick2;
-         
+
       }
       span {
          color: white;
@@ -29,6 +31,36 @@
       span:nth-child(2){
          grid-area: span2;
          
+      }
+      .glow::after {
+         position: absolute;
+         transform: translate(-50%, -50%);
+         content: '';
+         border: 80px solid white;
+         border-radius: 50%;
+         opacity: 0.05;
+         background-color: #fff;
+         z-index: -3;
+      }
+      .glow::before {
+         position: absolute;
+         transform: translate(-50%, -50%);
+         content: '';
+         border: 110px solid white;
+         border-radius: 50%;
+         opacity: 0.03;
+         background-color: #fff;
+         z-index: -3;
+      }
+      .glow2::after {
+         position: absolute;
+         transform: translate(-50%, -50%);
+         content: '';
+         border: 150px solid white;
+         border-radius: 50%;
+         opacity: 0.021;
+         background-color: #fff;
+         z-index: -3;
       }
    }
 

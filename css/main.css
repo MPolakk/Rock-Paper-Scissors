@@ -312,7 +312,8 @@ input {
   top: 10px;
 }
 
-.game-board div {
+.game-board .game-board__container {
+  position: relative;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "pick1 pick2" "span1 span2";
@@ -325,35 +326,103 @@ input {
           align-items: start;
 }
 
-.game-board div .symbol:nth-child(1) {
+.game-board .game-board__container .symbol:nth-child(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: pick1;
 }
 
-.game-board div .symbol:nth-child(2) {
+.game-board .game-board__container .symbol:nth-child(2) {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: pick2;
 }
 
-.game-board div span {
+.game-board .game-board__container span {
   color: white;
   font-size: 1.6em;
   text-transform: uppercase;
   margin: 20px auto;
 }
 
-.game-board div span:nth-child(1) {
+.game-board .game-board__container span:nth-child(1) {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: span1;
 }
 
-.game-board div span:nth-child(2) {
+.game-board .game-board__container span:nth-child(2) {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: span2;
+}
+
+.game-board .game-board__container .glow::after {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  border: 80px solid white;
+  border-radius: 50%;
+  opacity: 0.05;
+  background-color: #fff;
+  z-index: -3;
+}
+
+.game-board .game-board__container .glow::before {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  border: 110px solid white;
+  border-radius: 50%;
+  opacity: 0.03;
+  background-color: #fff;
+  z-index: -3;
+}
+
+.game-board .game-board__container .glow2::after {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  border: 150px solid white;
+  border-radius: 50%;
+  opacity: 0.021;
+  background-color: #fff;
+  z-index: -3;
+}
+
+.play-again {
+  position: absolute;
+  bottom: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-transform: uppercase;
+}
+
+.play-again .play-again__text {
+  font-size: 6.0em;
+  font-weight: 700;
+  color: white;
+  margin: 20px 0;
+}
+
+.play-again .play-again__button {
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
 }
 
 .rules-bar {

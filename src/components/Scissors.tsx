@@ -5,7 +5,7 @@ interface Active {
 
 const Scissors = (props: Active) => {
    return (
-      <button className={`symbol scissors ${props.active}`}></button>
+      <button className={`symbol scissors ${props.active ? props.active : ''}`}></button>
    );
 }
 

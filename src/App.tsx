@@ -3,6 +3,7 @@ import ScoreBoard from './components/ScoreBoard';
 import PickingBoard from './components/PickingBoard';
 import Rules from './components/Rules';
 import GameBoard from './components/GameBoard';
+import PlayAgain from './components/PlayAgain';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <ScoreBoard />
       {/* <PickingBoard /> */}
       <GameBoard />
+      <PlayAgain />
       <Rules />
     </div>
   );

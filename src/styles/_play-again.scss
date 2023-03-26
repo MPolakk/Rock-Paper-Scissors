@@ -1,0 +1,32 @@
+.play-again {
+   position: absolute;
+   bottom: 20%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   text-transform: uppercase;
+   .play-again__text {
+      font-size: 6.0em;  
+      font-weight: 700;
+      color: white;
+      margin: 20px 0;
+   }
+   .play-again__button {
+      font-size: 1.4em;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      
+
+   }
+   
+
+
+
+
+
+}
