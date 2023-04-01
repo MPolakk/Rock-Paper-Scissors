@@ -1,6 +1,12 @@
 import logo from '../images/logo.svg'
+import { useAppSelector, useAppDispatch } from '../hooks'
+
 
 const ScoreBoard = () => {
+
+
+   const { score } = useAppSelector(state => state.gameSlice)
+
    return (
       <div className="score-board">
          <div className="score-board_logo" style={{ backgroundImage: `url(${logo})` }}>
@@ -9,7 +15,7 @@ const ScoreBoard = () => {
 
          <div className="score-board_score">
             <span>score</span>
-            <span className="score-number">12</span>
+            <span className="score-number">{score}</span>
          </div>
       </div>);
 }

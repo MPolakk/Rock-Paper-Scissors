@@ -2,6 +2,7 @@
 
 
 #root {
+   // position: fixed;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -19,7 +20,7 @@
    width:300px;
    height: 100%;
    margin: 10px;
-   padding: 0 0 250px;
+   padding: 20px 0 250px;
    z-index: 1;
    div:nth-child(2){
    div{
