@@ -1,0 +1,8 @@
+$screen-lg-min: 1366px;
+
+
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}

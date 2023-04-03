@@ -9,7 +9,7 @@ interface CounterState {
    score: number
    page: string
    gameSymbols: string[]
-   gameRules: string[][],
+   gameRules: string[][]
    rulesActive: boolean
 }
 
@@ -71,7 +71,8 @@ const gameSlice = createSlice({
       },
       isRulesActive(state) {
          state.rulesActive = !state.rulesActive
-      }
+      },
+
 
    },
 });

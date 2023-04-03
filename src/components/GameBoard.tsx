@@ -1,24 +1,24 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useAppSelector, useAppDispatch } from "../hooks";
 import { pick2, isWinner, isDraw, scoreCounter } from '../reducers/gameSlice'
 import Rock from "./Rock";
 import Paper from "./Paper";
 import BlankSpace from "./BlankPlace";
-import GlowEffect from './GlowEffect';
-import PlayAgain from "./PlayAgain";
 import Scissors from "./Scissors";
+import PlayAgain from './PlayAgain';
+import { useState } from 'react';
 
 
-
-const GameBoard = () => {
+const GameBoard = (props: { widthUpdate: number }) => {
 
    const { pick, pick2nd, gameRules, draw, gameSymbols, youWin } = useAppSelector(state => state.gameSlice)
    const dispatch = useAppDispatch()
 
+
    const winnerGlowEffect = (item: string) => {
       if (draw) return;
-      if (youWin && item === pick || !youWin && item === pick2nd) {
+      if ((youWin && item === pick) || (!youWin && item === pick2nd)) {
          return true
       }
    }
@@ -47,15 +47,6 @@ const GameBoard = () => {
 
 
 
-
-
-   const randomSymbol = () => {
-      const randomNumber = Math.floor(Math.random() * (3 - 1) + 1);
-      const symbol = gameSymbols[randomNumber]
-      dispatch(pick2(gameSymbols[randomNumber]));
-      checkWinner(symbol)
-   }
-
    const checkWinner = (symbol: string) => {
       if (pick === symbol) return dispatch(isDraw(true))
       gameRules.forEach(item => {
@@ -70,10 +61,22 @@ const GameBoard = () => {
       })
 
    }
+
+   const randomSymbol = useCallback(() => {
+      const randomNumber = Math.floor(Math.random() * (3 - 1) + 1);
+      const symbol = gameSymbols[randomNumber]
+      dispatch(pick2(gameSymbols[randomNumber]));
+
+
+
+      checkWinner(symbol)
+   }, [])
+
+
    useEffect(() => {
       setTimeout(randomSymbol, 1000)
 
-   }, [pick])
+   }, [randomSymbol])
 
 
 
@@ -83,9 +86,9 @@ const GameBoard = () => {
             {renderPickedSymbol()}
 
             {pick2nd === undefined ? <BlankSpace /> : renderPickedSymbol2nd()}
-            <span>you picked</span>
-            <span> the house picked</span>
-
+            <span className="container__you">you picked</span>
+            <span className="container__enemy"> the house picked</span>
+            {pick2nd && props.widthUpdate >= 1366 ? <PlayAgain /> : null}
 
          </div>
       </div >

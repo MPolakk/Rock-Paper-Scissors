@@ -5,6 +5,10 @@
    justify-content: center;
    align-items: center;
    height: 45px;
+   @include lg {
+      position: fixed;
+      right: 50px;
+   }
    .rules {
       background-color: transparent;
       border: 2px solid hsl(217, 16%, 45%);

@@ -5,11 +5,16 @@
    justify-content: center;
    flex-wrap: wrap;
    text-transform: uppercase;
+   
    .play-again__text {
       font-size: 6.0em;  
       font-weight: 700;
       color: white;
       margin: 20px 0;
+      @include lg {
+         width: 100%;
+         text-align: center;
+               }
    }
    .play-again__button {
       font-size: 1.4em;
@@ -21,7 +26,9 @@
       height: 50px;
       border: none;
       border-radius: 10px;
-      
+      @include lg {
+         width: 100%;
+      }
 
    }
    

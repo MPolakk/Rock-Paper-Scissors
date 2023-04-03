@@ -6,7 +6,11 @@
    border: 2px solid hsl(217, 16%, 45%);
    border-radius: 5px;
    padding: 10px 10px 10px 15px;
-
+   @include lg {
+      height: 150px;
+      padding: 20px;
+      font-size: 2em;
+   }
 
    .score-board_logo {
       width: 30%;
@@ -26,6 +30,10 @@
       padding: 5px;
       background-color: #fff;
       border-radius: 5px;
+      @include lg {
+         width: 150px;
+         aspect-ratio: 1/1;
+      }
       span {
          width: 100%;
          text-align: center;

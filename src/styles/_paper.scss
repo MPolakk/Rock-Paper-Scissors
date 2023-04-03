@@ -1,24 +1,9 @@
 .paper {
-   // margin-right: 15px;
    grid-area: PAPER;
-   position: relative;
-   border: 0 solid transparent;
-   border-radius: 50%;
-   
-   background-clip: padding-box;
    background-image: url('../images/icon-paper.svg');
-   background-repeat: no-repeat;
-   background-position: center;
-   
-   
 }
 .paper::after {
-   position: absolute;
-   top: -15px; bottom: -15px;
-   left: -15px; right: -15px;
    background: linear-gradient(hsl(230, 89%, 62%),hsl(230, 89%, 65%));
-   content: '';
-   z-index: -1;
-   border-radius: 50%;
    box-shadow: 0 8px 1px -1px hsla(230, 89%, 62%, 0.5);
+  
 }
