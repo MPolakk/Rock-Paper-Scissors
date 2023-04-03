@@ -63,8 +63,9 @@ const GameBoard = (props: { widthUpdate: number }) => {
    }
 
    const randomSymbol = useCallback(() => {
-      const randomNumber = Math.floor(Math.random() * (3 - 1) + 1);
+      const randomNumber = Math.floor(Math.random() * (2 - 0));
       const symbol = gameSymbols[randomNumber]
+      console.log(randomNumber)
       dispatch(pick2(gameSymbols[randomNumber]));
 
 
