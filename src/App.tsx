@@ -5,7 +5,7 @@ import Rules from './components/Rules';
 import GameBoard from './components/GameBoard';
 import PlayAgain from './components/PlayAgain';
 import PopUpRules from './components/PopUpRules';
-import { useAppSelector, useAppDispatch } from './hooks';
+import { useAppSelector } from './hooks';
 import { useEffect, useState } from 'react';
 function App() {
   const { picked, pick2nd, rulesActive } = useAppSelector(state => state.gameSlice)

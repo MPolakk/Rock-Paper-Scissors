@@ -1,5 +1,5 @@
 import logo from '../images/logo.svg'
-import { useAppSelector, useAppDispatch } from '../hooks'
+import { useAppSelector } from '../hooks'
 
 
 const ScoreBoard = () => {

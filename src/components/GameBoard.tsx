@@ -7,7 +7,6 @@ import Paper from "./Paper";
 import BlankSpace from "./BlankPlace";
 import Scissors from "./Scissors";
 import PlayAgain from './PlayAgain';
-import { useState } from 'react';
 
 
 const GameBoard = (props: { widthUpdate: number }) => {
@@ -65,11 +64,7 @@ const GameBoard = (props: { widthUpdate: number }) => {
    const randomSymbol = useCallback(() => {
       const randomNumber = Math.floor(Math.random() * (2 - 0));
       const symbol = gameSymbols[randomNumber]
-      console.log(randomNumber)
       dispatch(pick2(gameSymbols[randomNumber]));
-
-
-
       checkWinner(symbol)
    }, [])
 

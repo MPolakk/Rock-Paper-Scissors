@@ -1,6 +1,3 @@
-import Scissors from "./Scissors";
-import Paper from "./Paper";
-import Rock from "./Rock";
 import { useAppDispatch } from "../hooks";
 import { isRulesActive } from "../reducers/gameSlice";
 
